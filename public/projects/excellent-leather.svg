@@ -1,0 +1,21 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgLeather" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#15181D"/>
+      <stop offset="100%" stop-color="#0A0B0E"/>
+    </linearGradient>
+    <linearGradient id="strap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A2018"/>
+      <stop offset="100%" stop-color="#1D1610"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bgLeather)"/>
+  <g transform="translate(600,400)">
+    <rect x="-220" y="-260" width="440" height="520" rx="40" fill="url(#strap)" stroke="#3A2C1F"/>
+    <rect x="-150" y="-260" width="300" height="60" rx="20" fill="none" stroke="#3FD6C6" stroke-opacity="0.35" stroke-width="3"/>
+    <circle cx="0" cy="-40" r="70" fill="none" stroke="#5B4632" stroke-width="3"/>
+    <circle cx="0" cy="-40" r="14" fill="#3FD6C6" fill-opacity="0.5"/>
+    <line x1="-150" y1="120" x2="150" y2="120" stroke="#3A2C1F" stroke-width="2"/>
+    <line x1="-150" y1="150" x2="150" y2="150" stroke="#3A2C1F" stroke-width="2"/>
+  </g>
+</svg>

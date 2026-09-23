@@ -1,0 +1,11 @@
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  # Netlify auto-detects pnpm-lock.yaml and installs with pnpm;
+  # this just pins the version to match packageManager in package.json.
+  PNPM_VERSION = "9.7.0"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

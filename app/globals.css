@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #0e1013;
+  color: #e9ecef;
+  font-feature-settings: "ss01" 1;
+}
+
+::selection {
+  background-color: rgba(63, 214, 198, 0.3);
+  color: #f4fffd;
+}
+
+/* Keyboard focus visibility */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #3fd6c6;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Slim, quiet scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0b0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #262b33;
+  border-radius: 999px;
+  border: 2px solid #0a0b0e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333944;
+}
+
+.balance {
+  text-wrap: balance;
+}
+
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2.5rem;
+  }
+}
