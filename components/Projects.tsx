@@ -14,7 +14,7 @@ export default function Projects() {
             Featured projects
           </h2>
           <p className="mt-4 max-w-prose text-ink-muted">
-            A selection of applications I've built or contributed to,
+            A selection of applications I&apos;ve built or contributed to,
             spanning tooling, community platforms, and product sites.
           </p>
         </Reveal>
