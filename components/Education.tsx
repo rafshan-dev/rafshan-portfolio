@@ -13,9 +13,11 @@ export default function Education() {
             <Reveal key={entry.institution} delay={i * 0.08}>
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                 <h3 className="font-medium text-ink">{entry.degree}</h3>
-                <span className="text-sm text-ink-faint">
-                  {entry.start} to {entry.end}
-                </span>
+                {entry.start && entry.end && (
+                  <span className="text-sm text-ink-faint">
+                    {entry.start} to {entry.end}
+                  </span>
+                )}
               </div>
               <p className="mt-1 text-sm text-accent/90">
                 {entry.institution} ({entry.detail})

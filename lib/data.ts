@@ -263,8 +263,8 @@ export type EducationEntry = {
   degree: string;
   institution: string;
   detail: string;
-  start: string;
-  end: string;
+  start?: string;
+  end?: string;
 };
 
 export const education: EducationEntry[] = [
@@ -274,6 +274,23 @@ export const education: EducationEntry[] = [
     detail: "CGPA 3.40 / 4.00",
     start: "Jan 2016",
     end: "Dec 2020",
+  },
+  {
+    degree: "Higher Secondary Certificate (HSC)",
+    institution: "Shaheed Ramiz Uddin Cantonment College",
+    detail: "Science · GPA 4.58 / 5.00",
+    end: "2015",
+  },
+  {
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Uttar Khan Collegiate School",
+    detail: "Science · GPA 4.88 / 5.00",
+    end: "2013",
+  },
+  {
+    degree: "Pearson Test of English (PTE)",
+    institution: "English proficiency",
+    detail: "Overall score: 66",
   },
 ];
 

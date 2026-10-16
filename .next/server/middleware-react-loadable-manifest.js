@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"components/ThreeBackground.tsx -> three\":{\"id\":\"components/ThreeBackground.tsx -> three\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_pnpm_three_0_169_0_node_modules_three_build_three_module_js.js\"]}}"
