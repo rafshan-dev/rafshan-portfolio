@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main id="main-content">
+      <main id="main-content" className="relative z-10">
         <Hero />
         <About />
         <Skills />
@@ -21,7 +21,9 @@ export default function Home() {
         <Education />
         <Contact />
       </main>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </>
   );
 }

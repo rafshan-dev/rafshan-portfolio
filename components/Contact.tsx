@@ -47,17 +47,6 @@ export default function Contact() {
             >
               LinkedIn
             </a>
-            <span aria-hidden="true" className="text-ink-faint">
-              /
-            </span>
-            <a
-              href={site.gitlab}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
-            >
-              GitLab
-            </a>
           </div>
         </Reveal>
       </div>

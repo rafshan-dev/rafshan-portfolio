@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/data";
 import ScrollProgress from "@/components/ScrollProgress";
+import ThreeBackground from "@/components/ThreeBackground";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <ScrollProgress />
+        <ThreeBackground />
         {children}
       </body>
     </html>

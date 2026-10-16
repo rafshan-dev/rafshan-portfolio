@@ -1,75 +1,59 @@
 // ─────────────────────────────────────────────────────────────────────────
-// SITE CONTENT
-// This is the single file you need to edit to update the portfolio's copy.
-// Sourced from Rafshanul's resume (FlowCV export). A couple of small gaps
-// that weren't in the resume are still marked "PLACEHOLDER" — search for
-// that word before shipping. Setting a link field to `null` hides the
-// related button automatically.
+// SITE CONTENT — the one file to edit for copy, links, and projects.
+// Sourced from the updated resume (Md_Rafshanul_Hoque_Siam_Resume.pdf).
+// Anything marked PLACEHOLDER is not in the resume. Setting a link field to
+// `null` hides the related button automatically.
 // ─────────────────────────────────────────────────────────────────────────
 
 export const site = {
   name: "Rafshanul Hoque Siam",
   role: "Senior Software Engineer",
   location: "Dhaka, Bangladesh",
-  email: "rafshanulsiam811@gmail.com",
+  email: "rafshanul.dev@gmail.com",
   phone: "+8801684454811",
-  github: "https://github.com/siam88",
-  gitlab: "https://gitlab.com/siam88",
-  linkedin: "https://linkedin.com/in/siam88",
-  website: "https://mrhoque.netlify.app",
+  github: "https://github.com/rafshan-dev",
+  linkedin: "https://www.linkedin.com/in/rafshanul-hoque-siam", // verify exact handle
   headline: "I build thoughtful web experiences that solve real problems.",
   intro:
-    "I'm a Dhaka-based software engineer with 4+ years of experience shipping production web applications for telecom, e-commerce, and SaaS products — from large-scale customer portals used by hundreds of thousands of people to focused tools built under two-day deadlines.",
+    "Frontend engineer specializing in TypeScript, React, and Next.js, with 4+ years of experience building fast, interactive, cross-device interfaces for the fintech and marketing industries, with a focus on quality UX and DX.",
   seoDescription:
-    "Portfolio of Rafshanul Hoque Siam, a Dhaka-based Senior Software Engineer specializing in React, Next.js, and TypeScript, with 4+ years of experience building web applications for telecom, e-commerce, and SaaS products.",
+    "Portfolio of Rafshanul Hoque Siam, a Dhaka-based Senior Software Engineer specializing in TypeScript, React, and Next.js, building fast, interactive web applications for fintech and marketing.",
 };
 
 export const about = {
   paragraphs: [
-    "I'm a frontend-focused engineer with 4+ years of experience building web applications end to end — from large customer-facing portals for telecom operators to focused SaaS tools and gaming platforms.",
-    "Most of my work has involved translating complex, multi-stakeholder requirements into interfaces that stay fast and maintainable at scale — improving Core Web Vitals and SEO performance across production apps, and building the dashboards, purchase flows, and interactive experiences that sit on top of them.",
-    "I'm currently a Senior Software Engineer at softwindTech Ltd., where I work across client engagements for companies including Robi, Airtel, DBL, and Banglalink, alongside internal SaaS and gaming products.",
+    "I'm a frontend engineer who cares about the whole path from design to production: pixel-accurate interfaces from Figma, performance budgets that hold up, and codebases the next engineer can work in without fear.",
+    "Currently at ConneQted agents, I optimize and architect a Next.js dashboard portal: a shared design system, an Nx monorepo, and tooling that turns microservice Swagger docs into TypeScript types. Before that I spent years at SoftwindTech building telco and marketing experiences for Robi, Airtel, DBL, and Banglalink, from interactive maps and data visualizations to Unity 3D integrations.",
+    "I'm drawn to teams building products people rely on daily, where Core Web Vitals, type safety, and clear documentation are part of the definition of done.",
   ],
 };
 
-export type SkillGroup = {
-  title: string;
-  description: string;
-  skills: string[];
-};
+export type SkillGroup = { title: string; description: string; skills: string[] };
 
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
-    description: "Building interfaces and the systems behind them.",
+    description: "Interfaces, motion, and visual work.",
     skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "SASS",
-      "Bootstrap",
-      "Material UI",
-      "Ant Design",
+      "React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "MUI",
+      "Shadcn", "Bootstrap", "Framer Motion", "GSAP", "D3.js", "Chart.js",
+      "Canvas", "React Three Fiber",
     ],
   },
   {
     title: "State & Data",
-    description: "Keeping application state predictable at scale.",
-    skills: ["Redux", "Zustand", "REST APIs", "GraphQL"],
+    description: "Predictable state and typed data flow.",
+    skills: [
+      "Redux", "Zustand", "RxJS", "TanStack Query", "REST APIs", "Swagger / OpenAPI",
+      "Node.js", "Express", "Nest.js",
+    ],
   },
   {
     title: "Tools & Deployment",
-    description: "Shipping and running software in production.",
+    description: "Shipping and maintaining at scale.",
     skills: [
-      "Git",
-      "GitHub",
-      "GitLab",
-      "React Testing Library",
-      "ElectronJS",
-      "Node.js",
-      "Trello",
+      "Git", "Docker", "Linux", "Nx Monorepo", "Micro-frontends", "Unit Testing",
+      "Netlify", "Vercel", "Strapi / WordPress", "Jira & Confluence", "Figma",
     ],
   },
 ];
@@ -82,65 +66,62 @@ export type Project = {
   contribution: string;
   features: string[];
   stack: string[];
-  image: string; // path under /public
-  demoUrl: string | null; // null hides the "Live Demo" button
-  sourceUrl: string | null; // null hides the "Source Code" button
-  featured?: boolean;
+  image: string;
+  demoUrl: string | null;
+  sourceUrl: string | null;
 };
 
 export const projects: Project[] = [
   {
     slug: "pdf-pack",
     name: "PDF Pack",
-    tagline: "A free, focused SaaS toolkit for everyday PDF operations.",
+    tagline: "A free SaaS toolkit for everyday PDF work.",
     problem:
-      "People frequently need to merge, split, compress, or convert PDFs but end up bouncing between cluttered, ad-heavy web tools or installing desktop software for a one-off task.",
+      "People need to merge, split, compress, or convert PDFs, but end up in cluttered, ad-heavy tools or desktop installs for a one-off task.",
     contribution:
-      "Developing this SaaS platform from the ground up, with a focus on fast uploads/downloads and keeping large-file processing under a two-second load target.",
+      "Developed the SaaS platform with a custom PDF implementation, focused on fast uploads and downloads and sub-2-second load times.",
     features: [
       "Merge, split, compress, and convert PDF files",
-      "Fast uploads and downloads, tuned for large PDFs",
-      "Integrated analytics to track user engagement",
-      "Consistent interaction pattern reused across every tool in the suite",
+      "Fast uploads/downloads with sub-2-second load times",
+      "Integrated analytics, targeting 50,000+ monthly active users within three months of launch",
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    stack: ["Next.js", "Canvas", "React PDF (custom)"],
     image: "/projects/pdf-pack.svg",
     demoUrl: "https://pdfpack.com/",
     sourceUrl: null,
-    featured: true,
   },
   {
     slug: "toffee-quiz-app",
-    name: "TidBit — Quiz by Toffee",
-    tagline: "An interactive quiz app built end to end in a two-day sprint.",
+    name: "Quiz Application (Toffee)",
+    tagline: "A full-featured quiz app built in two days.",
     problem:
-      "Quiz-style experiences need to feel snappy and rewarding — and this one came with a hard constraint: the entire build, from UI design to development to UAT, had to land in two days.",
+      "Quiz experiences must feel snappy and rewarding, and this one had a hard constraint: UI design through UAT in a 2-day window.",
     contribution:
-      "Owned the full build myself — UI design and markup, development, and user acceptance testing — under that compressed timeline.",
+      "Owned the build end to end, from UI design to UAT, demonstrating rapid prototyping and delivery.",
     features: [
-      "Full question, scoring, and results flow",
-      "UI designed and built from scratch, not adapted from a template",
-      "Shipped through UAT within the two-day window",
+      "Complete question, scoring, and results flow",
+      "UI designed and built from scratch",
+      "Delivered through UAT within the 2-day deadline",
     ],
-    stack: ["Next.js", "TypeScript"],
+    stack: ["Next.js", "React", "Zustand", "Context API", "Axios"],
     image: "/projects/toffee-quiz.svg",
-    demoUrl: null, // TODO: add link if this is publicly viewable
+    demoUrl: null, // TODO: add link if publicly viewable
     sourceUrl: null,
   },
   {
     slug: "noobfeed",
-    name: "NoobFeed",
-    tagline: "A dynamic gaming review platform.",
+    name: "NoobFeed & Critop",
+    tagline: "Gaming review sites with critic and gamer reviews.",
     problem:
-      "Gaming review sites live or die on how easily readers can browse critiques and ratings across a constant stream of new releases without the interface getting in the way.",
+      "Review sites live on discoverability and speed: readers need ratings and insights across platforms, loading fast with high-resolution media.",
     contribution:
-      "Built the platform's core experience — critique and ratings display, insights across multiple gaming platforms, and the performance work behind it.",
+      "Developed the dynamic review sites, focusing on SEO and performance with ISR and optimized media delivery.",
     features: [
-      "Comprehensive critiques, ratings, and insights across platforms",
-      "Built for a Google performance rating of A",
-      "Structured content layout for fast browsing of new releases",
+      "Critic and gamer reviews, ratings, and insights across platforms",
+      "Organic traffic boosted 40% through SEO and performance work",
+      "Google PageSpeed score of A",
     ],
-    stack: ["Next.js", "TypeScript"],
+    stack: ["Next.js", "TypeScript", "ISR"],
     image: "/projects/noobfeed.svg",
     demoUrl: "https://www.noobfeed.com/",
     sourceUrl: null,
@@ -148,75 +129,132 @@ export const projects: Project[] = [
   {
     slug: "excellent-leather-agency",
     name: "Excellent Leather Agency",
-    tagline: "A storefront-style site for a leather goods business.",
-    problem:
-      "A product-based business needed a web presence that presents its catalog clearly and builds enough trust to convert visits into inquiries, without the overhead of a full e-commerce platform.",
-    contribution:
-      "Built the site's frontend — product presentation, layout, and responsive behavior — translating brand and catalog requirements into a straightforward, browsable interface.",
-    features: [
-      "Structured product catalog with categories",
-      "Responsive layout tuned for product photography",
-      "Fast page loads via static generation",
-      "Clear inquiry/contact pathway for prospective buyers",
-    ],
-    stack: ["React", "Next.js", "Tailwind CSS"],
+    tagline: "PLACEHOLDER: one-line description.",
+    problem: "PLACEHOLDER: what problem did this project solve?",
+    contribution: "PLACEHOLDER: what did you build or own? (Not listed on the resume.)",
+    features: ["PLACEHOLDER: key feature", "PLACEHOLDER: key feature"],
+    stack: ["PLACEHOLDER"],
     image: "/projects/excellent-leather.svg",
-    demoUrl: null, // TODO: add live demo URL if/when available
-    sourceUrl: null, // TODO: add repository URL if it's public
+    demoUrl: null,
+    sourceUrl: null,
   },
 ];
 
-export type ExperienceEntry = {
-  company: string;
-  role: string;
-  start: string;
-  end: string;
-  location: string;
-  summary: string;
-  highlights: string[];
+export type MoreWork = {
+  name: string;
+  description: string;
+  stack: string[];
+  links?: { label: string; url: string }[];
 };
+
+export const moreWork: MoreWork[] = [
+  {
+    name: "Telco Websites (Robi & Airtel)",
+    description:
+      "Owned end-to-end development of scalable modules for dashboards, packs, offers, purchases, maps, and digital services, serving 12K+ users, improving SEO 25%+, and keeping load under 3s.",
+    stack: ["React", "Next.js", "Redux", "Google Maps", "Nx", "MUI"],
+    links: [
+      { label: "Robi", url: "https://www.robi.com.bd/en" },
+      { label: "Airtel", url: "https://www.bd.airtel.com/en" },
+    ],
+  },
+  {
+    name: "Blockstak",
+    description:
+      "AI-driven web products: responsive interfaces, interactive features, and scalable components, collaborating on MVPs and AI integrations.",
+    stack: ["Next.js", "TanStack Query", "Shadcn"],
+  },
+  {
+    name: "Laxfo (DBL Group)",
+    description:
+      "Core developer improving UX, responsiveness, performance, and accessibility, delivering timely updates within tight deadlines.",
+    stack: ["Next.js", "Bootstrap", "Tailwind", "Zustand"],
+    links: [{ label: "Visit", url: "https://laxfo.net/en" }],
+  },
+  {
+    name: "Robi FWA",
+    description:
+      "Custom web portal where users manage accounts, track orders, and purchase services. Expected outcomes: 30% higher online engagement and 25% lower call centre volume.",
+    stack: ["Next.js", "Tailwind", "Redux", "Axios"],
+    links: [{ label: "Visit", url: "https://robiwifi.robi.com.bd/" }],
+  },
+  {
+    name: "Virtual Jewellery Try-on",
+    description:
+      "WebAR experience built for SoftwindTech that lets users try on jewellery virtually, currently across three categories.",
+    stack: ["React", "React Three Fiber", "WebARRock", "SCSS"],
+  },
+  {
+    name: "Interactive Microsites",
+    description:
+      "Robi T20 World Cup dual-video quiz, Mojo's Eid-ul-Adha cow-sound voice game, and the Liberation Battle comic story with synchronized audio and mobile vibration.",
+    stack: ["Next.js", "React", "Context API", "Zustand", "Axios"],
+  },
+];
+
+export type Role = { title: string; start: string; end: string; highlights: string[] };
+
+export type ExperienceEntry = { company: string; summary?: string; roles: Role[] };
 
 export const experience: ExperienceEntry[] = [
   {
-    company: "softwindTech Ltd.",
-    role: "Senior Software Engineer",
-    start: "Jun 2022",
-    end: "Present",
-    location: "Dhaka, Bangladesh",
-    summary:
-      "Collaborating with multidisciplinary teams across major client engagements — including Robi, Airtel, DBL, and Banglalink — building and maintaining production web applications on the MERN stack.",
-    highlights: [
-      "Improved Web Vitals scores and page performance across multiple production web apps",
-      "Developed SEO-friendly features to support organic growth for client platforms",
-      "Built and maintained applications on the MERN stack, from dashboards to interactive microsites",
-      "Introduced technical fixes for recurring development issues to keep delivery on schedule",
+    company: "ConneQted agents",
+    roles: [
+      {
+        title: "Senior Software Engineer",
+        start: "May 2025",
+        end: "Present",
+        highlights: [
+          "Optimized a legacy Next.js application to a 90%+ Core Web Vitals score and cut bundle size by ~40%",
+          "Advocated type-safe code standards, linting, and unit testing to improve maintainability",
+          "Architected features and a design system in Next.js, with reusable components and directives for an integrated dashboard portal",
+          "Consolidated projects into an Nx monorepo with shared libraries, eliminating code duplication",
+          "Automated conversion of Swagger docs from multiple microservices into ready-to-use TypeScript types via a custom tool",
+          "Authored documentation and guides for internal libraries used by affiliates and teammates",
+        ],
+      },
+    ],
+  },
+  {
+    company: "SoftwindTech Ltd.",
+    roles: [
+      {
+        title: "Senior Frontend Engineer",
+        start: "Sep 2023",
+        end: "Apr 2025",
+        highlights: [
+          "Reduced load time by migrating a React Router project to Next.js Incremental Static Regeneration",
+          "Recognized as a Star-rated developer in the annual evaluation for contributions beyond core responsibilities",
+          "Improved Web Vitals and built SEO-friendly features across multiple web apps",
+          "Migrated a class-based React telco website to functional React, then to a Next.js custom server",
+        ],
+      },
+      {
+        title: "Frontend Developer (React)",
+        start: "Jun 2022",
+        end: "Aug 2023",
+        highlights: [
+          "Delivered pixel-perfect, responsive UIs from Figma for Robi, Airtel, DBL, and Banglalink",
+          "Built data visualizations, interactive maps, and marketing experiences with D3.js, Canvas, Chart.js, GSAP, Framer Motion, Sensor APIs, and CSS animations",
+          "Integrated Unity 3D experiences into React via iframe and message passing",
+          "Partnered with designers and stakeholders on technically constrained, business-critical features",
+        ],
+      },
     ],
   },
   {
     company: "eCarnivalBD Ltd.",
-    role: "Software Engineer",
-    start: "Jan 2021",
-    end: "May 2022",
-    location: "Dhaka, Bangladesh",
-    summary:
-      "Contributed to the core development team building the company's in-house product, working closely with the scrum team on system design and delivery.",
-    highlights: [
-      "Contributed to a product update associated with a 27% increase in revenue and 170% more new customers",
-      "Maintained code integrity and organization across the codebase",
-      "Fed system design and improvement proposals into scrum planning",
-    ],
-  },
-  {
-    company: "Nanosoft Ltd.",
-    role: "Software Engineering Intern",
-    start: "Feb 2020",
-    end: "May 2020",
-    location: "Dhaka, Bangladesh",
-    summary:
-      "Early-career internship focused on requirements gathering and working within an existing codebase.",
-    highlights: [
-      "Met directly with clients to discuss project-specific requirements",
-      "Reviewed and rewrote existing code for clarity and effectiveness",
+    roles: [
+      {
+        title: "Junior Software Engineer",
+        start: "Jan 2021",
+        end: "Aug 2022",
+        highlights: [
+          "Analyzed and refactored legacy code to improve performance, readability, and maintainability",
+          "Contributed to the in-house product, translating client requirements into scalable solutions",
+          "Contributed system design ideas and improvements in scrum meetings",
+        ],
+      },
     ],
   },
 ];
@@ -224,28 +262,20 @@ export const experience: ExperienceEntry[] = [
 export type EducationEntry = {
   degree: string;
   institution: string;
+  detail: string;
   start: string;
   end: string;
-  location: string;
 };
 
 export const education: EducationEntry[] = [
   {
-    degree: "Bachelor of Science in Computer Science and Engineering",
+    degree: "BSc in Computer Science and Engineering",
     institution: "Southeast University",
-    start: "2016",
-    end: "2021",
-    location: "Dhaka, Bangladesh",
+    detail: "CGPA 3.40 / 4.00",
+    start: "Jan 2016",
+    end: "Dec 2020",
   },
 ];
-
-export const certificates: string[] = [
-  "Scrum Foundation Professional Certificate (SFPC)",
-  "Interactivity with JavaScript",
-  "JavaScript Intermediate",
-];
-
-export const languages: string[] = ["English", "Bangla"];
 
 export const contact = {
   heading: "Let's build something worth using.",
