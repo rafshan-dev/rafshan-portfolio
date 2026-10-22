@@ -10,7 +10,7 @@ Content comes from your updated resume: contact details, all roles (ConneQted ag
 - **LinkedIn handle** (`site.linkedin`): the resume text was truncated, so verify it.
 - **Project images** in `public/projects/` are abstract placeholders; swap in screenshots.
 
-The production domain is configured as `https://rafshan.dev` in `lib/data.ts`. The App Router generates `/sitemap.xml`, `/robots.txt`, and the 1200 × 630 PNG social image at `/og`.
+The production domain is configured as `https://rafshan.dev` in `lib/data.ts`. The App Router generates `/sitemap.xml`, `/robots.txt`, and the 1200 × 630 PNG social image at `/og`. A concise AI-crawler-friendly portfolio summary is available at `/llms.txt`.
 
 ## Editing content
 

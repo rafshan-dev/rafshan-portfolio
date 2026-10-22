@@ -15,17 +15,19 @@ export const site = {
   phone: "+8801684454811",
   github: "https://github.com/rafshan-dev",
   linkedin: "https://www.linkedin.com/in/rafshanul-hoque-siam", // verify exact handle
-  headline: "I build thoughtful web experiences that solve real problems.",
+  headline: "Frontend engineer building the human side of AI.",
   intro:
-    "Frontend engineer specializing in TypeScript, React, and Next.js, with 4+ years of experience building fast, interactive, cross-device interfaces for the fintech and marketing industries, with a focus on quality UX and DX.",
+    "I build fast, accessible React and Next.js experiences and collaborate with AI product teams to turn integrations into intuitive web interfaces.",
+  seoTitle: "Rafshanul Hoque Siam | Frontend Developer for AI Products",
   seoDescription:
-    "Portfolio of Rafshanul Hoque Siam, a Dhaka-based Senior Software Engineer specializing in TypeScript, React, and Next.js, building fast, interactive web applications for fintech and marketing.",
+    "Rafshanul Hoque Siam is a Dhaka, Bangladesh-based frontend developer and senior software engineer specializing in React, Next.js, and TypeScript. He builds fast, accessible web experiences and collaborates with AI product teams on user-friendly AI integrations.",
 };
 
 export const about = {
   paragraphs: [
     "I'm a frontend engineer who cares about the whole path from design to production: pixel-accurate interfaces from Figma, performance budgets that hold up, and codebases the next engineer can work in without fear.",
     "Currently at ConneQted agents, I optimize and architect a Next.js dashboard portal: a shared design system, an Nx monorepo, and tooling that turns microservice Swagger docs into TypeScript types. Before that I spent years at SoftwindTech building telco and marketing experiences for Robi, Airtel, DBL, and Banglalink, from interactive maps and data visualizations to Unity 3D integrations.",
+    "I've also contributed to AI-driven web products, building responsive interfaces and collaborating on MVPs and AI integrations. I focus on making complex product capabilities clear and usable through thoughtful frontend engineering.",
     "I'm drawn to teams building products people rely on daily, where Core Web Vitals, type safety, and clear documentation are part of the definition of done.",
   ],
 };

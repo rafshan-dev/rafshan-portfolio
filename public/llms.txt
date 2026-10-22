@@ -1,0 +1,31 @@
+# Rafshanul Hoque Siam
+
+> Personal portfolio of Rafshanul Hoque Siam, a Dhaka, Bangladesh-based Senior Software Engineer and frontend developer.
+
+Rafshanul builds fast, accessible web interfaces with React, Next.js, and TypeScript. He has experience collaborating on AI-driven web products, MVPs, and AI integrations, with a focus on making product capabilities intuitive through frontend engineering.
+
+## Portfolio
+
+- Homepage: https://rafshan.dev/
+- About: https://rafshan.dev/#about
+- Projects: https://rafshan.dev/#projects
+- Experience: https://rafshan.dev/#experience
+- Skills: https://rafshan.dev/#skills
+- Contact: https://rafshan.dev/#contact
+
+## Focus areas
+
+- Frontend development and software engineering
+- React, Next.js, TypeScript, and JavaScript
+- Accessible, responsive, high-performance web applications
+- Frontend implementation for AI products and AI integrations
+- UI engineering, design systems, and product collaboration
+
+## Selected work
+
+- PDF Pack: SaaS toolkit for common PDF tasks.
+- Quiz Application (Toffee): quiz application delivered through user acceptance testing on a two-day schedule.
+- NoobFeed & Critop: gaming review websites focused on SEO and performance.
+- AI-driven web products: responsive interfaces, MVP collaboration, and AI integrations.
+
+For current details, use the portfolio pages linked above.
