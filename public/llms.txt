@@ -6,12 +6,12 @@ Rafshanul builds fast, accessible web interfaces with React, Next.js, and TypeSc
 
 ## Portfolio
 
-- Homepage: https://rafshan.dev/
-- About: https://rafshan.dev/#about
-- Projects: https://rafshan.dev/#projects
-- Experience: https://rafshan.dev/#experience
-- Skills: https://rafshan.dev/#skills
-- Contact: https://rafshan.dev/#contact
+- [Homepage](https://rafshan.dev/): Portfolio overview and hero
+- [About](https://rafshan.dev/#about): About section of the portfolio
+- [Projects](https://rafshan.dev/#projects): Projects section of the portfolio
+- [Experience](https://rafshan.dev/#experience): Experience section of the portfolio
+- [Skills](https://rafshan.dev/#skills): Skills section of the portfolio
+- [Contact](https://rafshan.dev/#contact): Contact section of the portfolio
 
 ## Focus areas
 
