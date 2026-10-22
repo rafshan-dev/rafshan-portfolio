@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST='{"components/ThreeBackground.tsx -> three":{"id":7042,"files":["static/chunks/2c7bdfb3.f61ec72f38e2ce65.js"]}}';
