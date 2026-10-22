@@ -4,11 +4,12 @@
   "functions": {
     "/og/route": {
       "files": [
+        "server/server-reference-manifest.js",
+        "server/app/og/route_client-reference-manifest.js",
         "server/middleware-build-manifest.js",
         "server/middleware-react-loadable-manifest.js",
         "server/next-font-manifest.js",
         "server/interception-route-rewrite-manifest.js",
-        "prerender-manifest.js",
         "server/edge-runtime-webpack.js",
         "server/app/og/route.js"
       ],
@@ -36,10 +37,12 @@
           "filePath": "server/edge-chunks/asset_noto-sans-v27-latin-regular.5dda3fca77107598.ttf"
         }
       ],
-      "environments": {
-        "previewModeId": "6da981fd0aef931f69d691dc4d7851ff",
-        "previewModeSigningKey": "73aaf1db85d3c5367f03b9b89757534c6c9a4de9dfad9f823135dbfa579f8d34",
-        "previewModeEncryptionKey": "649c6085ed6b75e7478f002a711056592ba6527bb407ede4309f51211eb08918"
+      "env": {
+        "__NEXT_BUILD_ID": "o99d_j7Z8V5vZEF_x3oH5",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "v6dlp4sPVZfiQxJaOaipDcFdd8PU4JspM+os0qUw4x8=",
+        "__NEXT_PREVIEW_MODE_ID": "39069041a6b65809daf030fdeda742bb",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "fec90635116af6f9c29f2fbe01c9ebc2d0f300517bede1a5b781077e314ecea1",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "be8fbdd5a8bf9ac84cb452184b7e1313b9662d0d082f685ba35b6451737d2270"
       }
     }
   },

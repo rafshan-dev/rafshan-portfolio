@@ -1,1 +1,7 @@
-{"/_not-found/page":"/_not-found","/page":"/","/robots.txt/route":"/robots.txt","/sitemap.xml/route":"/sitemap.xml","/og/route":"/og"}
+{
+  "/_not-found/page": "/_not-found",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/page": "/",
+  "/og/route": "/og"
+}

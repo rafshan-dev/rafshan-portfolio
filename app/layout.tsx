@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { site, siteUrl, skillGroups } from "@/lib/data";
 import ScrollProgress from "@/components/ScrollProgress";
 import ThreeBackground from "@/components/ThreeBackground";
 
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+const display = localFont({
+  src: "../public/fonts/space-grotesk-latin.woff2",
+  weight: "300 700",
   variable: "--font-display",
   display: "swap",
 });
 
-const body = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const body = localFont({
+  src: "../public/fonts/inter-latin.woff2",
+  weight: "100 900",
   variable: "--font-body",
   display: "swap",
 });
