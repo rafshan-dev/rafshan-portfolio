@@ -36,7 +36,7 @@ export default function Experience() {
                 <div className="relative">
                   <span
                     aria-hidden="true"
-                    className="absolute -left-[2.35rem] top-2 h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(63,214,198,0.15)] md:-left-[2.6rem]"
+                    className="absolute -left-[2.35rem] top-2 h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(241,91,85,0.15)] md:-left-[2.6rem]"
                   />
                   <h3 className="font-display text-h3 font-medium text-ink">
                     {entry.company}

@@ -2,15 +2,15 @@
 
 A personal portfolio site built with Next.js (App Router), TypeScript, Tailwind CSS, and Motion for React.
 
-## What's filled in vs. what's a placeholder
+## Content notes
 
-Content comes from your updated resume: contact details, all roles (ConneQted agents, SoftwindTech with both titles, eCarnivalBD), projects, skills, and education. Remaining gaps are marked `PLACEHOLDER` or `TODO` in `lib/data.ts`:
+Content comes from your updated resume: contact details, all roles (ConneQted agents, SoftwindTech with both titles, eCarnivalBD), projects, skills, and education. Remaining items to verify in `lib/data.ts`:
 
-- **Excellent Leather Agency**: not on the resume, so every field is a placeholder. Fill it in or remove the entry.
 - **Quiz Application (Toffee)**: no public link listed, so its demo button is hidden.
 - **LinkedIn handle** (`site.linkedin`): the resume text was truncated, so verify it.
-- **`siteUrl`** in `app/layout.tsx`: set it once your domain is connected.
 - **Project images** in `public/projects/` are abstract placeholders; swap in screenshots.
+
+The production domain is configured as `https://rafshan.dev` in `lib/data.ts`. The App Router generates `/sitemap.xml`, `/robots.txt`, and the 1200 × 630 PNG social image at `/og`.
 
 ## Editing content
 
@@ -82,13 +82,13 @@ If your domain's DNS is managed in Cloudflare but the site is hosted on Netlify:
 3. In **Cloudflare → DNS**, add those records.
 4. Set the Cloudflare proxy status (the orange cloud) to **DNS only (grey cloud)** first while Netlify issues its SSL certificate — proxying too early can interfere with certificate validation. Once Netlify shows the domain as secured (HTTPS active), you can switch it back to **Proxied (orange cloud)** if you want Cloudflare's CDN/WAF in front of the site.
 5. In Cloudflare's SSL/TLS settings, use **Full** (or **Full (strict)**) mode — not "Flexible" — to avoid redirect loops with Netlify's own HTTPS.
-6. Update `siteUrl` in `app/layout.tsx` to your real domain once it's live, so Open Graph/Twitter metadata and canonical URLs are correct.
+6. Confirm `rafshan.dev` resolves to the Netlify site and redirects to the non-`www` HTTPS hostname, matching the canonical metadata.
 
 ## Before you launch — checklist
 
 - [ ] Add a live-demo link for TidBit (Toffee Quiz App) if one exists publicly
-- [ ] Update or remove the Excellent Leather Agency project (not on your resume — confirm details or swap it for another project)
-- [ ] Add real screenshots for all four projects in `public/projects/`
-- [ ] Update `siteUrl` in `app/layout.tsx`
+- [ ] Confirm `rafshan.dev` resolves to the deployed site and the non-`www` HTTPS redirect is active
+- [ ] Add real screenshots for all three featured projects in `public/projects/`
+- [ ] Verify LinkedIn URL and Toffee demo link, if available
 - [ ] Run `pnpm build` locally once to confirm a clean production build
 - [ ] Confirm the site reads correctly with reduced motion enabled (OS-level "reduce motion" setting) and on a small mobile viewport

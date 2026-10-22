@@ -33,7 +33,7 @@ export default function SpotlightCard({
     mouseY.set(e.clientY - rect.top);
   };
 
-  const background = useMotionTemplate`radial-gradient(240px circle at ${mouseX}px ${mouseY}px, rgba(63,214,198,0.12), transparent 75%)`;
+  const background = useMotionTemplate`radial-gradient(240px circle at ${mouseX}px ${mouseY}px, rgba(241,91,85,0.12), transparent 75%)`;
 
   return (
     <div

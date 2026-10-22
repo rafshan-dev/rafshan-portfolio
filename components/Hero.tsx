@@ -13,6 +13,8 @@ const container = {
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
+  const [firstName, ...remainingName] = site.name.split(" ");
+  const familyName = remainingName.join(" ");
 
   const item = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 18 },
@@ -26,99 +28,109 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] items-center overflow-hidden pt-24"
+      className="relative flex min-h-[100svh] items-end overflow-hidden pb-16 pt-32 md:items-center md:pb-0 md:pt-24"
     >
-      {/* Ambient gradient glow — the single bold visual gesture on the page */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
       >
-        <div className="absolute left-1/2 top-[-10%] h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-accent/[0.08] blur-[120px]" />
-        <div className="absolute inset-0 bg-grid-fade" />
+        <div className="absolute left-1/2 top-[-10%] h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-accent/[0.07] blur-[120px]" />
+        <div className="hero-grid absolute inset-0" />
       </div>
 
       <motion.div
         variants={container}
         initial="hidden"
         animate="visible"
-        className="container-page relative"
+        className="container-page relative w-full"
       >
         <motion.p
           variants={item}
-          className="mb-6 text-sm text-ink-muted"
+          className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-line bg-base-deep/60 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-ink-muted"
         >
-          {site.role} · {site.location}
+          <span
+            aria-hidden="true"
+            className="h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(241,91,85,0.55)]"
+          />
+          {site.role} <span className="text-ink-faint">/</span> {site.location}
         </motion.p>
 
         <motion.h1
           variants={item}
-          className="font-display text-hero font-medium text-ink balance max-w-4xl"
+          className="font-display text-[clamp(3.75rem,13.6vw,12rem)] font-semibold uppercase leading-[0.79] tracking-[-0.085em] text-ink"
         >
-          {site.headline}
+          <span className="block">{firstName}</span>
+          <span className="mt-2 block text-accent">{familyName}</span>
         </motion.h1>
 
-        <motion.p
-          variants={item}
-          className="mt-8 max-w-prose text-lg leading-relaxed text-ink-muted"
-        >
-          {site.intro}
-        </motion.p>
+        <div className="mt-10 grid gap-8 border-t border-line/80 pt-7 md:mt-12 md:grid-cols-12 md:gap-10 md:pt-8">
+          <motion.div variants={item} className="md:col-span-5">
+            <p className="max-w-lg font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
+              {site.headline}
+            </p>
+          </motion.div>
 
-        <motion.div
-          variants={item}
-          className="mt-10 flex flex-wrap items-center gap-4"
-        >
-          <MagneticButton>
-            <a
-              href="#projects"
-              className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-base-deep transition-colors duration-300 hover:bg-accent-bright"
-            >
-              View my work
-            </a>
-          </MagneticButton>
-          <MagneticButton>
-            <a
-              href="#contact"
-              className="inline-block rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-colors duration-300 hover:border-accent/50 hover:text-accent"
-            >
-              Get in touch
-            </a>
-          </MagneticButton>
-        </motion.div>
+          <motion.div variants={item} className="md:col-span-6 md:col-start-7">
+            <p className="max-w-prose text-base leading-relaxed text-ink-muted md:text-lg">
+              {site.intro}
+            </p>
 
-        <motion.div
-          variants={item}
-          className="mt-12 flex items-center gap-6 text-sm text-ink-muted"
-        >
-          <a
-            href={site.github}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
-          >
-            <GithubIcon />
-            GitHub
-          </a>
-          <a
-            href={site.linkedin}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
-          >
-            <LinkedinIcon />
-            LinkedIn
-          </a>
-        </motion.div>
+            <div className="mt-7 flex flex-wrap items-center gap-4">
+              <MagneticButton>
+                <a
+                  href="#projects"
+                  className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-base-deep transition-colors duration-300 hover:bg-accent-bright"
+                >
+                  View my work
+                </a>
+              </MagneticButton>
+              <MagneticButton>
+                <a
+                  href="#contact"
+                  className="inline-block rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-colors duration-300 hover:border-accent/50 hover:text-accent"
+                >
+                  Get in touch
+                </a>
+              </MagneticButton>
+            </div>
+
+            <div className="mt-7 flex items-center gap-6 text-sm text-ink-muted">
+              <a
+                href={site.github}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
+              >
+                <GithubIcon />
+                GitHub
+              </a>
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
+              >
+                <LinkedinIcon />
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
 
       <motion.div
-        aria-hidden="true"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 md:block"
+        className="absolute bottom-10 right-10 hidden md:block"
       >
-        <div className="h-10 w-px bg-gradient-to-b from-transparent via-line to-transparent" />
+        <a
+          href="#about"
+          className="flex items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-ink-faint transition-colors hover:text-ink-muted"
+        >
+          Scroll to explore
+          <span className="h-8 w-px bg-gradient-to-b from-accent/70 to-transparent" />
+        </a>
       </motion.div>
     </section>
   );

@@ -30,16 +30,18 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? "bg-base-deep/80 backdrop-blur-md border-b border-line"
-          : "bg-transparent"
-      }`}
+      className="fixed inset-x-0 top-3 z-50 px-3 md:top-4 md:px-6"
     >
-      <div className="container-page flex h-16 items-center justify-between md:h-20">
+      <div
+        className={`mx-auto flex h-14 max-w-6xl items-center justify-between rounded-full border px-4 transition-all duration-300 md:h-[4.5rem] md:px-6 ${
+          scrolled
+            ? "border-line bg-base-deep/90 shadow-lg shadow-black/10 backdrop-blur-xl"
+            : "border-line/70 bg-base-deep/65 backdrop-blur-lg"
+        }`}
+      >
         <a
           href="#hero"
-          className="font-display text-sm font-medium tracking-tight text-ink hover:text-accent transition-colors"
+          className="font-display text-sm font-semibold tracking-tight text-ink transition-colors hover:text-accent md:text-base"
         >
           {site.name}
         </a>

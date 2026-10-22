@@ -25,9 +25,9 @@ const config: Config = {
           faint: "#5B6270",
         },
         accent: {
-          DEFAULT: "#3FD6C6",
-          dim: "#2AA79B",
-          bright: "#7EEFE2",
+          DEFAULT: "#F15B55",
+          dim: "#C84440",
+          bright: "#FF817A",
         },
       },
       fontFamily: {
@@ -45,7 +45,7 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-fade":
-          "linear-gradient(to bottom, rgba(63,214,198,0.08), transparent 60%)",
+          "linear-gradient(to bottom, rgba(241,91,85,0.08), transparent 60%)",
         "noise": "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.4%22/></svg>')",
       },
       transitionTimingFunction: {

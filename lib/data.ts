@@ -1,9 +1,11 @@
 // ─────────────────────────────────────────────────────────────────────────
 // SITE CONTENT — the one file to edit for copy, links, and projects.
 // Sourced from the updated resume (Md_Rafshanul_Hoque_Siam_Resume.pdf).
-// Anything marked PLACEHOLDER is not in the resume. Setting a link field to
-// `null` hides the related button automatically.
+// Keep unverified project details out of the portfolio. Setting a link field
+// to `null` hides the related button automatically.
 // ─────────────────────────────────────────────────────────────────────────
+
+export const siteUrl = "https://rafshan.dev";
 
 export const site = {
   name: "Rafshanul Hoque Siam",
@@ -124,18 +126,6 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "ISR"],
     image: "/projects/noobfeed.svg",
     demoUrl: "https://www.noobfeed.com/",
-    sourceUrl: null,
-  },
-  {
-    slug: "excellent-leather-agency",
-    name: "Excellent Leather Agency",
-    tagline: "PLACEHOLDER: one-line description.",
-    problem: "PLACEHOLDER: what problem did this project solve?",
-    contribution: "PLACEHOLDER: what did you build or own? (Not listed on the resume.)",
-    features: ["PLACEHOLDER: key feature", "PLACEHOLDER: key feature"],
-    stack: ["PLACEHOLDER"],
-    image: "/projects/excellent-leather.svg",
-    demoUrl: null,
     sourceUrl: null,
   },
 ];

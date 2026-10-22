@@ -204,8 +204,8 @@ export default function ThreeBackground() {
           uSize: { value: 2.4 },
           uPixelRatio: { value: 1 },
           uOpacity: { value: 0.55 },
-          uColorA: { value: new THREE.Color("#3FD6C6") },
-          uColorB: { value: new THREE.Color("#7EEFE2") },
+          uColorA: { value: new THREE.Color("#F15B55") },
+          uColorB: { value: new THREE.Color("#FF817A") },
         },
       });
 

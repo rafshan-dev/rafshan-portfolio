@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import { site } from "@/lib/data";
+import { site, siteUrl, skillGroups } from "@/lib/data";
 import ScrollProgress from "@/components/ScrollProgress";
 import ThreeBackground from "@/components/ThreeBackground";
 
@@ -19,14 +19,43 @@ const body = Inter({
   display: "swap",
 });
 
-// TODO: set this to your real production domain once you have one
-// connected through Cloudflare, e.g. "https://rafshanul.dev"
-const siteUrl = "https://example.com";
+const socialImageUrl = `${siteUrl}/og`;
+const socialImageAlt = `Rafshanul Hoque Siam — ${site.role}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: site.name,
+      url: siteUrl,
+      jobTitle: site.role,
+      description: site.seoDescription,
+      knowsAbout: skillGroups.flatMap((group) => group.skills),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: site.name,
+      url: siteUrl,
+      inLanguage: "en",
+      author: { "@id": `${siteUrl}/#person` },
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${site.name} — ${site.role}`,
+  title: {
+    default: `${site.name} | ${site.role}`,
+    template: `%s | ${site.name}`,
+  },
   description: site.seoDescription,
+  applicationName: `${site.name} Portfolio`,
+  alternates: {
+    canonical: `${siteUrl}/`,
+  },
   keywords: [
     "Rafshanul Hoque Siam",
     "Senior Software Engineer",
@@ -37,16 +66,26 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} | ${site.role}`,
     description: site.seoDescription,
-    url: siteUrl,
+    url: `${siteUrl}/`,
     siteName: site.name,
     type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: socialImageUrl,
+        width: 1200,
+        height: 630,
+        alt: socialImageAlt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} | ${site.role}`,
     description: site.seoDescription,
+    images: [{ url: socialImageUrl, alt: socialImageAlt }],
   },
   robots: {
     index: true,
@@ -71,6 +110,12 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <ScrollProgress />
         <ThreeBackground />
         {children}

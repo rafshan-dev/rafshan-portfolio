@@ -31,7 +31,7 @@ body {
 }
 
 ::selection {
-  background-color: rgba(63, 214, 198, 0.3);
+  background-color: rgba(241, 91, 85, 0.3);
   color: #f4fffd;
 }
 
@@ -39,7 +39,7 @@ body {
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #3fd6c6;
+  outline: 2px solid #f15b55;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -62,6 +62,14 @@ button:focus-visible,
 
 .balance {
   text-wrap: balance;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(233, 236, 239, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 236, 239, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 100%);
 }
 
 .container-page {
