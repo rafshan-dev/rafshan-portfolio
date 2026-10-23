@@ -18,9 +18,9 @@ export const site = {
   headline: "Frontend engineer building the human side of AI.",
   intro:
     "I build fast, accessible React and Next.js experiences and collaborate with AI product teams to turn integrations into intuitive web interfaces.",
-  seoTitle: "Rafshanul Hoque Siam | Frontend Developer for AI Products",
+  seoTitle: "Rafshanul Hoque Siam | Senior Software Engineer",
   seoDescription:
-    "Rafshanul Hoque Siam is a Dhaka, Bangladesh-based frontend developer and senior software engineer specializing in React, Next.js, and TypeScript. He builds fast, accessible web experiences and collaborates with AI product teams on user-friendly AI integrations.",
+    "Explore the portfolio of Rafshanul Hoque Siam, a Senior Software Engineer focused on React, Next.js, TypeScript, and modern web development.",
 };
 
 export const about = {
