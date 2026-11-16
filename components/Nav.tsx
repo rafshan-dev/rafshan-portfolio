@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { PrismFlow } from "./prism-flow";
 import { nav, site } from "@/lib/data";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredHref, setHoveredHref] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -29,46 +31,54 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header
-      className="fixed inset-x-0 top-3 z-50 px-3 md:top-4 md:px-6"
-    >
+    <header className="fixed inset-x-0 top-3 z-50 px-3 md:top-4 md:px-4">
       <div
-        className={`mx-auto flex h-14 max-w-6xl items-center justify-between rounded-full border px-4 transition-all duration-300 md:h-[4.5rem] md:px-6 ${
-          scrolled
-            ? "border-line bg-base-deep/90 shadow-lg shadow-black/10 backdrop-blur-xl"
-            : "border-line/70 bg-base-deep/65 backdrop-blur-lg"
+        className={`relative flex h-14 items-center justify-between overflow-hidden rounded-full border border-white/10 px-4 shadow-[0_10px_35px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl transition-colors duration-300 md:h-16 md:w-fit md:gap-6 md:px-5 ${
+          scrolled ? "bg-base-deep/85" : "bg-base-deep/75"
         }`}
       >
+        <PrismFlow className="absolute inset-0 opacity-60" />
         <a
           href="#hero"
-          className="font-display text-sm font-semibold tracking-tight text-ink transition-colors hover:text-accent md:text-base"
+          aria-label={site.name}
+          className="relative z-10 inline-flex shrink-0 items-center transition-opacity duration-200 hover:opacity-85"
         >
-          {site.name}
+          <img
+            src="/favicon.svg"
+            alt={site.name}
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-lg border border-white/10 md:h-9 md:w-9 md:rounded-xl"
+          />
         </a>
 
         <nav
           aria-label="Primary"
-          className="hidden md:flex items-center gap-8"
+          onMouseLeave={() => setHoveredHref(null)}
+          className="relative z-10 hidden items-center gap-1 md:flex"
         >
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="group/nav relative text-sm text-ink-muted transition-colors hover:text-ink"
-            >
-              {item.label}
-              <span
-                aria-hidden="true"
-                className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-accent transition-transform duration-300 ease-out-expo group-hover/nav:scale-x-100"
-              />
-            </a>
-          ))}
-          <a
-            href="#contact"
-            className="rounded-full border border-accent/40 px-4 py-2 text-sm text-accent hover:bg-accent/10 transition-colors"
-          >
-            Get in touch
-          </a>
+          {nav.map((item) => {
+            const isHovered = hoveredHref === item.href;
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                onMouseEnter={() => setHoveredHref(item.href)}
+                className={`relative rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-colors duration-200 ${
+                  isHovered ? "text-ink" : "text-ink-muted hover:text-ink"
+                }`}
+              >
+                {item.label}
+                {isHovered && (
+                  <motion.span
+                    layoutId="nav-hover-line"
+                    transition={{ type: "spring", stiffness: 460, damping: 34 }}
+                    className="absolute inset-0 -z-10 rounded-full bg-white/[0.08]"
+                  />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         <button
@@ -124,16 +134,6 @@ export default function Nav() {
                   {item.label}
                 </motion.a>
               ))}
-              <motion.a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 * nav.length, duration: 0.35 }}
-                className="mt-4 rounded-full border border-accent/40 px-5 py-2.5 text-accent"
-              >
-                Get in touch
-              </motion.a>
             </nav>
           </motion.div>
         )}

@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] items-end overflow-hidden pb-16 pt-32 md:items-center md:pb-0 md:pt-24"
+      className="relative flex min-h-[100svh] items-start overflow-hidden pb-28 pt-36 md:pt-40 md:pb-32"
     >
       <div
         aria-hidden="true"
@@ -47,16 +47,39 @@ export default function Hero() {
         animate="visible"
         className="container-page relative w-full"
       >
-        <motion.p
+        <motion.div
           variants={item}
-          className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-line bg-base-deep/60 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-ink-muted"
+          className="mb-7 flex flex-wrap items-center justify-between gap-4"
         >
-          <span
-            aria-hidden="true"
-            className="h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(241,91,85,0.55)]"
-          />
-          {site.role} <span className="text-ink-faint">/</span> {site.location}
-        </motion.p>
+          <p className="inline-flex items-center gap-2.5 rounded-full border border-line bg-base-deep/60 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-ink-muted">
+            <span
+              aria-hidden="true"
+              className="h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(241,91,85,0.55)]"
+            />
+            {site.role} <span className="text-ink-faint">/</span> {site.location}
+          </p>
+
+          <div className="flex items-center gap-5 text-sm text-ink-muted">
+            <a
+              href={site.github}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
+            >
+              <GithubIcon />
+              GitHub
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
+            >
+              <LinkedinIcon />
+              LinkedIn
+            </a>
+          </div>
+        </motion.div>
 
         <h1 className="font-display text-[clamp(3.75rem,13.6vw,12rem)] font-semibold uppercase leading-[0.79] tracking-[-0.085em] text-ink">
           <BlurText
@@ -167,27 +190,6 @@ export default function Hero() {
                   Get in touch
                 </a>
               </MagneticButton>
-            </div>
-
-            <div className="mt-7 flex items-center gap-6 text-sm text-ink-muted">
-              <a
-                href={site.github}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
-              >
-                <GithubIcon />
-                GitHub
-              </a>
-              <a
-                href={site.linkedin}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:text-ink"
-              >
-                <LinkedinIcon />
-                LinkedIn
-              </a>
             </div>
           </motion.div>
         </div>
