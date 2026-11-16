@@ -236,6 +236,7 @@ export default function ThreeBackground() {
         return SHAPE_COUNT - 1;
       };
 
+      let baseOpacity = 0.55;
       const resize = () => {
         const w = window.innerWidth;
         const h = window.innerHeight;
@@ -245,7 +246,8 @@ export default function ThreeBackground() {
         camera.aspect = w / h;
         camera.updateProjectionMatrix();
         material.uniforms.uPixelRatio.value = dpr;
-        material.uniforms.uOpacity.value = isMobile() ? 0.4 : 0.55;
+        baseOpacity = isMobile() ? 0.4 : 0.55;
+        material.uniforms.uOpacity.value = baseOpacity;
         measure();
       };
       resize();
@@ -277,6 +279,12 @@ export default function ThreeBackground() {
 
         material.uniforms.uProgress.value = current;
         material.uniforms.uTime.value = elapsed;
+
+        // Hide the dot cloud while viewing the About section (index 1).
+        const aboutDist = Math.abs(current - 1);
+        const tFade = Math.min(1, Math.max(0, (aboutDist - 0.25) / 0.5));
+        const aboutFade = tFade * tFade * (3 - 2 * tFade);
+        material.uniforms.uOpacity.value = baseOpacity * aboutFade;
 
         const amp = isMobile() ? 0.35 : 1;
         const introT = Math.min(1, elapsed / 1.2);

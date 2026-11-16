@@ -24,12 +24,32 @@ export const site = {
 };
 
 export const about = {
+  lead: "My focus is on frontend engineering and UI architecture, where I enjoy turning complex ideas into fast, accessible, and intuitive web experiences.",
   paragraphs: [
-    "I'm a frontend engineer who cares about the whole path from design to production: pixel-accurate interfaces from Figma, performance budgets that hold up, and codebases the next engineer can work in without fear.",
-    "Currently at ConneQted agents, I optimize and architect a Next.js dashboard portal: a shared design system, an Nx monorepo, and tooling that turns microservice Swagger docs into TypeScript types. Before that I spent years at SoftwindTech building telco and marketing experiences for Robi, Airtel, DBL, and Banglalink, from interactive maps and data visualizations to Unity 3D integrations.",
-    "I've also contributed to AI-driven web products, building responsive interfaces and collaborating on MVPs and AI integrations. I focus on making complex product capabilities clear and usable through thoughtful frontend engineering.",
-    "I'm drawn to teams building products people rely on daily, where Core Web Vitals, type safety, and clear documentation are part of the definition of done.",
+    "Currently at ConneQted agents, I architect and optimize a Next.js dashboard portal—building a shared design system, an Nx monorepo, and tooling that turns microservice Swagger specs into type-safe TypeScript. Previously at SoftwindTech, I built interactive telco and marketing platforms for Robi, Airtel, DBL, and Banglalink, from custom data visualizations to Unity 3D web integrations.",
+    "From developing AI-driven web products to crafting responsive component libraries, I enjoy exploring modern web technologies and challenging myself to build interfaces people genuinely enjoy using.",
   ],
+  drives: {
+    question: "What drives me?",
+    answer:
+      "Curiosity, continuous learning, and the satisfaction of turning an idea into an interface people can actually use.",
+  },
+  pillars: [
+    {
+      label: "Design → Production",
+      detail: "Pixel-accurate Figma execution with strict performance budgets.",
+    },
+    {
+      label: "UI Architecture",
+      detail: "Shared design systems, Nx monorepos, and end-to-end type safety.",
+    },
+    {
+      label: "AI Interfaces",
+      detail: "Turning complex AI capabilities into clear, human-friendly flows.",
+    },
+  ],
+  closing:
+    "I'm always looking for opportunities to grow as a frontend engineer, collaborate with talented teams, and build software that makes a difference.",
 };
 
 export type SkillGroup = { title: string; description: string; skills: string[] };

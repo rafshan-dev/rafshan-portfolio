@@ -78,7 +78,12 @@ export default function Hero() {
         <div className="mt-10 grid gap-8 border-t border-line/80 pt-7 md:mt-12 md:grid-cols-12 md:gap-10 md:pt-8">
           <motion.div variants={item} className="md:col-span-5">
             <p className="max-w-lg font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-              <WaveText text={site.headline} delay={1.2} />
+              <WaveText
+                text={site.headline}
+                delay={2.2}
+                duration={0.55}
+                stagger={0.018}
+              />
             </p>
           </motion.div>
 
@@ -129,12 +134,29 @@ export default function Hero() {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-4">
-              <MagneticButton>
+              <MagneticButton
+                strength={0.45}
+                labelStrength={0.25}
+                spring={{ stiffness: 530, damping: 25, mass: 0.6 }}
+              >
                 <a
                   href="#projects"
-                  className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-base-deep transition-colors duration-300 hover:bg-accent-bright"
+                  className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-base-deep transition-colors duration-300 hover:bg-accent-bright"
                 >
                   View my work
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
                 </a>
               </MagneticButton>
               <MagneticButton>
