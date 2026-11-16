@@ -250,16 +250,20 @@ export default function ThreeBackground() {
       };
       resize();
 
-      // Horizontal drift per shape keeps the cloud off the text column.
-      const xOffsets = [2.4, -2.4, 0.0, 2.4, -2.4, 0.0];
-      const sampleOffset = (p: number) => {
+      // Horizontal & vertical drift per shape keeps the cloud off the text column.
+      const xOffsets = [3.5, -2.4, 0.0, 2.4, -2.4, 0.0];
+      const yOffsets = [1.25, 0.0, 0.0, 0.0, 0.0, 0.0];
+      const sampleOffset = (offsets: number[], p: number) => {
         const i = Math.min(Math.floor(p), SHAPE_COUNT - 2);
         const f = p - i;
         const e = f * f * (3 - 2 * f);
-        return xOffsets[i] + (xOffsets[i + 1] - xOffsets[i]) * e;
+        return offsets[i] + (offsets[i + 1] - offsets[i]) * e;
       };
 
-      let current = 0;
+      const initialAmp = isMobile() ? 0.35 : 1;
+      let current = targetProgress();
+      points.position.x = sampleOffset(xOffsets, current) * initialAmp;
+      points.position.y = sampleOffset(yOffsets, current) * initialAmp;
       let pointerX = 0;
       let pointerY = 0;
       let raf = 0;
@@ -275,8 +279,14 @@ export default function ThreeBackground() {
         material.uniforms.uTime.value = elapsed;
 
         const amp = isMobile() ? 0.35 : 1;
-        points.position.x += (sampleOffset(current) * amp - points.position.x) * Math.min(1, dt * 3);
-        points.rotation.y = elapsed * 0.08 + current * 0.9 + pointerX * 0.25;
+        const introT = Math.min(1, elapsed / 1.2);
+        const introEase = 1 - Math.pow(1 - introT, 3);
+        const introSpin = introEase * Math.PI * 1.5;
+
+        points.scale.setScalar(0.55 + 0.45 * introEase);
+        points.position.x += (sampleOffset(xOffsets, current) * amp - points.position.x) * Math.min(1, dt * 3);
+        points.position.y += (sampleOffset(yOffsets, current) * amp - points.position.y) * Math.min(1, dt * 3);
+        points.rotation.y = introSpin + elapsed * 0.08 + current * 0.9 + pointerX * 0.25;
         points.rotation.x = Math.sin(current * 0.8) * 0.35 + pointerY * 0.15;
         camera.position.z = 7 - Math.sin((current / (SHAPE_COUNT - 1)) * Math.PI) * 0.8;
 
@@ -296,6 +306,7 @@ export default function ThreeBackground() {
           renderer.render(scene, camera);
         };
         points.position.x = xOffsets[0] * (isMobile() ? 0.35 : 1);
+        points.position.y = yOffsets[0] * (isMobile() ? 0.35 : 1);
         points.rotation.y = 0.4;
         still();
         window.addEventListener("resize", still);

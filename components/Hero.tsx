@@ -1,13 +1,16 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import { AnnotationText } from "@/components/annotation-text";
+import { BlurText } from "@/components/blur-text";
+import { WaveText } from "@/components/wave-text";
 import { site } from "@/lib/data";
 import MagneticButton from "./MagneticButton";
 
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.09, delayChildren: 0.15 },
+    transition: { staggerChildren: 0.09, delayChildren: 1.05 },
   },
 };
 
@@ -55,24 +58,74 @@ export default function Hero() {
           {site.role} <span className="text-ink-faint">/</span> {site.location}
         </motion.p>
 
-        <motion.h1
-          variants={item}
-          className="font-display text-[clamp(3.75rem,13.6vw,12rem)] font-semibold uppercase leading-[0.79] tracking-[-0.085em] text-ink"
-        >
-          <span className="block">{firstName}</span>
-          <span className="mt-2 block text-accent">{familyName}</span>
-        </motion.h1>
+        <h1 className="font-display text-[clamp(3.75rem,13.6vw,12rem)] font-semibold uppercase leading-[0.79] tracking-[-0.085em] text-ink">
+          <BlurText
+            text={firstName}
+            className="block"
+            delay={0.95}
+            duration={1.4}
+            stepDelay={0.18}
+          />
+          <BlurText
+            text={familyName}
+            className="mt-2 block text-accent"
+            delay={1.2}
+            duration={1.4}
+            stepDelay={0.18}
+          />
+        </h1>
 
         <div className="mt-10 grid gap-8 border-t border-line/80 pt-7 md:mt-12 md:grid-cols-12 md:gap-10 md:pt-8">
           <motion.div variants={item} className="md:col-span-5">
             <p className="max-w-lg font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-              {site.headline}
+              <WaveText text={site.headline} delay={1.2} />
             </p>
           </motion.div>
 
           <motion.div variants={item} className="md:col-span-6 md:col-start-7">
             <p className="max-w-prose text-base leading-relaxed text-ink-muted md:text-lg">
-              {site.intro}
+              I build{" "}
+              <AnnotationText
+                type="circle"
+                color="#F15B55"
+                duration={1.1}
+                delay={1.5}
+                className="text-ink"
+              >
+                fast
+              </AnnotationText>
+              , accessible{" "}
+              <AnnotationText
+                type="underline"
+                color="#FF817A"
+                duration={0.9}
+                delay={2.1}
+                className="text-ink"
+              >
+                React
+              </AnnotationText>{" "}
+              and{" "}
+              <AnnotationText
+                type="underline"
+                color="#FF817A"
+                duration={0.9}
+                delay={2.5}
+                className="text-ink"
+              >
+                Next.js
+              </AnnotationText>{" "}
+              experiences and collaborate with AI product teams to turn
+              integrations into{" "}
+              <AnnotationText
+                type="underline"
+                color="#FF817A"
+                duration={1.0}
+                delay={3.0}
+                className="text-ink"
+              >
+                intuitive
+              </AnnotationText>{" "}
+              web interfaces.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-4">
